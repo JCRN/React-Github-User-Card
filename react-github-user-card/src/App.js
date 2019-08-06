@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import './App.css'
 
 class App extends React.Component {
@@ -14,9 +15,7 @@ class App extends React.Component {
     axios
       .get(`https://api.github.com/users/${user}`)
       .then(results => {
-        // create usr card
-        const usrCard = createCard(results.data)
-        cards.appendChild(usrCard)
+        this.setState({ userData: results })
       })
       .catch(error => {
         alert('OOPS! Something Went Wrong :(', error)
