@@ -1,0 +1,12 @@
+.user-card-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 25vh;
+  width: 400px;
+  height: 600px;
+}
+
+.followers {
+  display: flex;
+  justify-content: space-evenly;
+}
