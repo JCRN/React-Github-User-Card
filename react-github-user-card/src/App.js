@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 import UserCard from './components/UserCard'
+import FollowerCard from './components/FollowerCard'
 
 class App extends React.Component {
   constructor() {
@@ -46,7 +47,18 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <h1>GITHUB USER</h1>
         <UserCard user={this.state.userData} followers={this.state.followers} />
+        {this.state.followers.map(follower => {
+          return (
+            <FollowerCard
+              key={follower.id}
+              follower={follower}
+              user={this.state.user}
+              handleClick={this.handleClick}
+            />
+          )
+        })}
       </div>
     )
   }

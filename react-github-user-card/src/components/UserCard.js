@@ -4,12 +4,21 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import '../stylesheets/usercard.css'
 
-export default function UserCard({ user }, { followers }) {
+export default function UserCard({ user }) {
   console.log('UserCard', user)
-  const { avatar_url, name, login, location, html_url, following, bio } = user
+  const {
+    avatar_url,
+    name,
+    login,
+    location,
+    html_url,
+    followers,
+    following,
+    bio
+  } = user
 
   return (
-    <Card centered className="user-card" color="olive" raised>
+    <Card className="user-card" raised>
       <Image src={avatar_url} wrapped ui={false} />
       <Card.Content textAlign="left">
         <Card.Header>{name}</Card.Header>
@@ -27,6 +36,10 @@ export default function UserCard({ user }, { followers }) {
         </Card.Description>
       </Card.Content>
       <Card.Content className="followers" textAlign="left" extra>
+        <a>
+          <Icon name="user" />
+          {`${followers} Followers`}
+        </a>
         <a>
           <Icon name="user" />
           {`Following ${following}`}

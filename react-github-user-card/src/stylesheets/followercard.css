@@ -1,0 +1,8 @@
+.button {
+  width: 85%;
+}
+
+.fc-extra {
+  display: flex;
+  justify-content: center;
+}
